@@ -5,7 +5,7 @@ require('dotenv').config()
 
 const crypto = require("crypto");
 const SECRET_KEY = `${process.env.SECRETKEY}`; // Must be 16 bytes
-const { sendMail } = require('../utils/mailer')
+const { sendMail } = require('../src/utils/mailer')
 const { v4: uuidv4 } = require('uuid');
 
 const hexToBuffer = (hex) =>
