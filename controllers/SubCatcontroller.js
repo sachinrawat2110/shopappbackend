@@ -1,5 +1,7 @@
 const SubCatModel = require('../models/SubCatmodel');
-
+const fs = require('fs');
+const path = require('path');
+const uploadpath = path.join(__dirname, '../public/upload');
 exports.AddSubcategory=async(req,res)=>
 {
   try
