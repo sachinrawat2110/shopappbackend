@@ -1,7 +1,7 @@
 const resetpassModel= require('../models/ResetPassModel');
 const Registermodel= require('../models/signupmodel');
 const { v4: uuidv4 } = require('uuid');
-const { sendMail } = require('../utils/mailer')
+const { sendMail } = require('../src/utils/mailer')
 const bcrypt = require('bcrypt');
 
 exports.Forgotpass= async (req, res) => 
