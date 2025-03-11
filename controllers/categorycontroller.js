@@ -1,5 +1,7 @@
 const CatModel = require('../models/Categorymodel');
-
+const fs = require('fs');
+const path = require('path');
+const uploadpath = path.join(__dirname, '../public/upload');
   exports.Addcategory=async(req,res)=>
 {
   try
