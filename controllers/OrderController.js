@@ -1,7 +1,7 @@
 const OrderModel= require('../models/OrderModel');
 const ProdModel = require('../models/ProductModel');
 const CartModel= require('../models/CartModel');
-const { sendMail } = require('../utils/mailer')
+const { sendMail } = require('../src/utils/mailer')
 
 exports.SaveOrder=async(req,res)=>
     {
