@@ -45,7 +45,7 @@ const upload = require('./multer')
   };
 
 router.post("/category",upload.single('cpic'),verifytoken,verifyAdmin,Categorycontroller.Addcategory)
-router.get("/getallcat",verifytoken,Categorycontroller.GetAllCategory)
+router.get("/getallcat",Categorycontroller.GetAllCategory)
 router.delete("/delcat",Categorycontroller.DeleteCategory)
 router.put("/updatecat",upload.single(`cpic`),Categorycontroller.UpdateCategory)
 
