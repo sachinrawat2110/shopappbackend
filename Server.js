@@ -1,26 +1,26 @@
-const express=require('express')
-const mongoose=require('mongoose')
+const express = require('express');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 const signupRoutes = require('./routes/signupRoutes');
-const categoryRoutes = require('./routes/categoryroutes');
+const categoryRoutes = require('./routes/categoryRoutes');
 const subcatroutes = require('./routes/Subcatroutes');
 const productroutes = require('./routes/ProductRoutes');
 const Resetpassroutes = require('./routes/ResetPassRoutes');
 const CartRoutes = require('./routes/CartRoutes');
 const OrderRoutes = require('./routes/OrderRoutes');
 
-const cors=require('cors')
-const app=express()
+const cors = require('cors');
+const app = express();
 
-app.use(
-    cors({
-    origin:(origin, callback)=>{
-        callback(null, true);
-    },
-      credentials: true,
-    })
-);
+dotenv.config();
 
-app.use(express.json())
+app.use(cors({
+    origin: 'https://your-frontend-url.onrender.com',
+    credentials: true
+}));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', signupRoutes);
 app.use('/api', categoryRoutes);
@@ -29,6 +29,7 @@ app.use('/api', productroutes);
 app.use('/api', Resetpassroutes);
 app.use('/api', CartRoutes);
 app.use('/api', OrderRoutes);
+
 
 const port=9000
 
