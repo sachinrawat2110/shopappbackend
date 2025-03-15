@@ -1,5 +1,7 @@
 const ProdModel = require('../models/ProductModel');
-
+const fs = require('fs');
+const path = require('path');
+const uploadpath = path.join(__dirname, '../public/upload');
 exports.SaveProduct=async(req,res)=>
   {
     try
