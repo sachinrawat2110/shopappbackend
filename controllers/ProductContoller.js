@@ -108,7 +108,7 @@ exports.SaveProduct=async(req,res)=>
   {
     try
     {
-      const result = await ProdModel.deleteOne({_id:req.params.pid})
+      const result = await ProdModel.deleteOne({_id:req.query.pid})
       console.log(result)
       if(result.deletedCount===1)
       {
